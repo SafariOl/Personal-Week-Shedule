@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>PERSONAL SCHEDULE</h1>
+        <div class="nav-btns">
+            <button type="button" class="add save" id="clear">CLEAR ALL</button>
+        </div>
+        <div class="content">
+            <aside>
+                <h2>ADD TASK</h2>
+                <form onsubmit="return false">
+                    <div class="form-block">
+                        <div>
+                            <label>TASK</label>
+                            <input autocomplete="off" id="task" type="text" value="">
+                        </div>
+                        <div>
+                            <label>TIME</label>
+                            <input autocomplete="off" id="time" type="time">
+                        </div>
+                    </div>
+                    <div class="days">
+                        <label>
+                            <h5>MONDAY</h5>
+                            <input type="checkbox" data-check="monday" value="monday">
+                        </label>
+                        <label>
+                            <h5>TUESDAY</h5>
+                            <input type="checkbox" data-check="tuesday" value="tuesday">
+                        </label>
+                        <label>
+                            <h5>WEDNESDAY</h5>
+                            <input type="checkbox" data-check="wednesday" value="wednesday">
+                        </label>
+                        <label>
+                            <h5>THURSDAY</h5>
+                            <input type="checkbox" data-check="thursday" value="thursday">
+                        </label>
+                        <label>
+                            <h5>FRIDAY</h5>
+                            <input type="checkbox" data-check="friday" value="friday">
+                        </label>
+                        <label>
+                            <h5>SATURDAY</h5>
+                            <input type="checkbox" data-check="saturday" value="saturday">
+                        </label>
+                        <label>
+                            <h5>SUNDAY</h5>
+                            <input type="checkbox" data-check="sunday" value="sunday">
+                        </label>
+                    </div>
+
+                    <button type="button" class="add" id="add">ADD TASK</button>
+                </form>
+                <div class="tasks-history">
+                    <h1>UNLIMITED TASKS</h1>
+                    <div class="tasks-history__content">
+                        <div class="empty">EMPTY</div>
+                    </div>
+                </div>
+            </aside>
+            <main>
+                <h2>THIS WEEK</h2>
+                <div class="tasks">
+                    <div class="day">
+                        <h3 class="date">MONDAY</h3>
+                        <div data-day="monday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3 class="date">TUESDAY</h3>
+                        <div data-day="tuesday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3 class="date">WEDNESDAY</h3>
+                        <div data-day="wednesday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3 class="date">THURSDAY</h3>
+                        <div data-day="thursday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3 class="date">FRIDAY</h3>
+                        <div data-day="friday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3 class="date">SATURDAY</h3>
+                        <div data-day="saturday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3 class="date">SUNDAY</h3>
+                        <div data-day="sunday" class="tasks__block">
+                            <div id="tasks-block-show"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="modal">
+                <div class="modal-content">
+                    <i id="close" class="fa-solid fa-xmark modal-close"></i>
+                    <h1></h1>
+                    <div class="modal-tasks"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

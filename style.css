@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e6e0cc;
+  font-family: "Russo One", sans-serif;
+}
+
+.wrapper {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.content {
+  margin-top: 30px;
+  display: grid;
+  grid-template: 1fr/minmax(300px, 500px) 1fr;
+  gap: 50px;
+}
+
+h2 {
+  text-align: center;
+}
+
+aside {
+  position: sticky;
+  min-height: 100vh;
+  border-right: 2px solid #000;
+}
+
+form {
+  margin-top: 25px;
+  text-align: center;
+}
+form .form-block {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+form .form-block .label {
+  font-size: 20px;
+}
+form .form-block input {
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #000;
+  margin: 5px 0 20px;
+  display: block;
+  padding: 7px 15px;
+  background: #fff;
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+form .form-block input:focus {
+  transform: scale(1.05);
+}
+form .days {
+  padding: 0 30px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  row-gap: 15px;
+  margin: 10px 0 30px;
+}
+form .days label {
+  display: flex;
+  flex-direction: column;
+}
+form .days input[type=checkbox] {
+  outline: none;
+  max-width: 18px;
+  width: 100%;
+  height: 18px;
+  margin: 10px auto 0;
+  transition: all 0.2s ease;
+}
+form .days input[type=checkbox]:hover {
+  filter: brightness(0.5);
+}
+
+.tasks-history {
+  margin-top: 25px;
+  padding-right: 20px;
+}
+.tasks-history .tasks-history__content {
+  height: 300px;
+  width: 100%;
+  overflow-y: scroll;
+  border: 3px solid #000;
+  box-shadow: 5px 5px 10px #000;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #b8b7b7;
+  position: relative;
+}
+.tasks-history .tasks-history__content .empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #646363;
+  font-style: italic;
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+.tasks-history h1 {
+  margin-top: 55px;
+  margin-bottom: 15px;
+}
+
+.task__options {
+  width: 100%;
+  padding: 15px;
+  background: #fff;
+  justify-content: space-between;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+.task__options .task__options__text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.task__options .task__options__text div {
+  display: flex;
+}
+.task__options .task__options__text select {
+  margin: 0 15px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  outline: none;
+  color: #000;
+  display: grid;
+  place-items: center;
+}
+.task__options .task__options__text option:checked {
+  font-family: "Russo One", sans-serif;
+}
+
+.add {
+  max-width: 200px;
+  width: 100%;
+  padding: 7px 0;
+  font-size: 20px;
+  color: #fff;
+  outline: none;
+  font-family: "Russo One", sans-serif;
+  background-color: #413b25;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #000;
+  transition: all 0.2s ease;
+}
+.add:hover {
+  background: #79735f;
+}
+.add:active {
+  transform: scale(0.95);
+}
+.add.two {
+  font-size: 16px;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+.add.two.active {
+  display: block;
+}
+.add.save {
+  margin-top: 10px;
+  border: 2px solid #fff;
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .tasks {
+  margin-top: 50px;
+  display: grid;
+  grid-template: repeat(3, 180px)/repeat(3, 170px);
+  row-gap: 50px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+main .tasks h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .tasks .tasks__block {
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 170px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 5px 5px 5px #000;
+  transition: all 0.2s ease;
+}
+main .tasks .tasks__block .task {
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0;
+  padding: 5px;
+  display: flex;
+  height: 45px;
+  overflow: hidden;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+}
+main .tasks .tasks__block .task::before {
+  content: "...";
+  font-size: 25px;
+  position: absolute;
+  left: 75%;
+  top: 5%;
+}
+main .tasks .tasks__block .task i {
+  display: none;
+}
+main .tasks .tasks__block .task__time {
+  font-size: 16px;
+  margin: 0 0 0 10px;
+}
+main .tasks .tasks__block .task__text {
+  display: none;
+}
+main .tasks .tasks__block:hover {
+  transform: scale(1.03);
+}
+main .tasks #tasks-block-show {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1111;
+}
+
+.modal {
+  display: none;
+}
+.modal.active {
+  z-index: 11111;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content {
+  border: 2px solid #000;
+  background-color: #fff;
+  width: 70vh;
+  padding: 30px;
+}
+.modal .modal-content h1 {
+  margin-bottom: 50px;
+}
+.modal .modal-content .modal-close {
+  float: right;
+  font-size: 30px;
+  position: relative;
+  top: -2%;
+}
+.modal .modal-content .task {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 5px #000;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.modal .modal-content i {
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */
