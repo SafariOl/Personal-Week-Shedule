@@ -288,6 +288,9 @@ main .tasks #tasks-block-show {
   position: relative;
   top: -2%;
 }
+.modal .modal-content .task__text {
+  margin: 0 10px;
+}
 .modal .modal-content .task {
   display: flex;
   justify-content: space-between;

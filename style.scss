@@ -290,6 +290,9 @@ main{
             position: relative;
             top: -2%;
         }
+        .task__text{
+            margin: 0 10px;
+        }
         .task{
             display: flex;
             justify-content: space-between;
