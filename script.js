@@ -158,10 +158,20 @@ function addToDayTask(item){
 
 
 function clearAll(){
-    localStorage.clear()
-    taskBlocks.forEach(block => {
-        block.innerHTML = ''
-    })
+    DAYS_TASKS = {
+        monday: [],
+        tuesday: [],
+        wednesday: [],
+        thursday: [],
+        friday: [],
+        saturday: [],
+        sunday: []
+    }
+    localStorage.setItem('tasks', JSON.stringify(DAYS_TASKS))
+    generateDayTasks()
+    HISTORY_TASKS = []
+    localStorage.setItem('history', JSON.stringify(HISTORY_TASKS))
+    generateHistoryTasks()
 }
 
 function removeItems(item){
