@@ -207,7 +207,7 @@ main{
         display: grid;
         grid-template: repeat(3, 180px) / repeat(3, 170px);
         row-gap: 50px;
-        column-gap: 20px;
+        column-gap: 50px;
         h3{
             text-align: center;
             margin-bottom: 10px;
