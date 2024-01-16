@@ -20,10 +20,10 @@ h1 {
 }
 
 .content {
-  margin-top: 30px;
+  margin: 30px 0 0;
   display: grid;
   grid-template: 1fr/minmax(300px, 500px) 1fr;
-  gap: 50px;
+  gap: 5vw;
 }
 
 h2 {
@@ -32,8 +32,12 @@ h2 {
 
 aside {
   position: sticky;
-  min-height: 100vh;
+  top: 0%;
+  height: 100vh;
   border-right: 2px solid #000;
+}
+aside h2 {
+  margin-top: 20px;
 }
 
 form {
@@ -44,6 +48,7 @@ form .form-block {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
+  gap: 5px;
 }
 form .form-block .label {
   font-size: 20px;
@@ -58,6 +63,8 @@ form .form-block input {
   outline: none;
   font-size: 18px;
   font-weight: 700;
+  max-width: 250px;
+  width: 100%;
   transition: all 0.2s ease;
 }
 form .form-block input:focus {
@@ -191,20 +198,15 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 30px;
 }
 main .tasks {
   margin-top: 50px;
   display: grid;
-  grid-template: repeat(3, 180px)/repeat(3, 170px);
-  row-gap: 50px;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
+  grid-template: repeat(3, 220px)/repeat(3, 170px);
+  row-gap: 4vh;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
 }
 main .tasks h3 {
   text-align: center;
@@ -215,7 +217,7 @@ main .tasks .tasks__block {
   border-radius: 5px;
   background-color: #fff;
   width: 170px;
-  height: 100%;
+  height: 87%;
   overflow: hidden;
   position: relative;
   box-shadow: 5px 5px 5px #000;
@@ -321,4 +323,20 @@ main .tasks #tasks-block-show {
 .modal .modal-content i {
   font-size: 24px;
   z-index: 4;
+}
+
+@media (max-width: 990px) {
+  main .tasks {
+    grid-template: repeat(4, 220px)/repeat(2, 170px);
+    -moz-column-gap: 2vw;
+         column-gap: 2vw;
+  }
+}
+@media (max-width: 730px) {
+  main .tasks {
+    grid-template: repeat(7, 220px)/repeat(1, 170px);
+  }
+  .tasks-history h1 {
+    margin-top: 25px;
+  }
 }/*# sourceMappingURL=style.css.map */
