@@ -298,7 +298,27 @@ main .tasks #tasks-block-show {
   box-shadow: 4px 4px 5px #000;
   padding: 15px;
   margin-bottom: 15px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.modal .modal-content .task:hover {
+  background: #a0a0a0;
+}
+.modal .modal-content .task.active {
+  background-color: #c9c9c9;
+}
+.modal .modal-content .task.active:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2.5%;
+  transform: translateY(-50%);
+  width: 105%;
+  height: 2px;
+  background-color: #2f2f2f;
+  z-index: 1;
 }
 .modal .modal-content i {
-  font-size: 20px;
+  font-size: 24px;
+  z-index: 4;
 }/*# sourceMappingURL=style.css.map */

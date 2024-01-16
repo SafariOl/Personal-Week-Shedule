@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
 window.addEventListener('click', e => {
     if(e.target.id == 'add') addTask()
     if(e.target.id == 'tasks-block-show') openDayPage(e.target.parentElement)
-    if(e.target.id == 'close') closeModal()
+    if(e.target.id == 'close') closeModal(e.target.closest('.modal'))
     if(e.target.id == 'remove') removeItems(e.target.parentElement)
     if(e.target.id == 'remove-history-item') removeHistoryItems(e.target.parentElement.parentElement)
     if(e.target.id == 'clear') clearAll()
@@ -176,7 +176,7 @@ function clearAll(){
 
 function removeItems(item){
     const id = item.dataset['id']
-    const parent = item.parentElement.parentElement;
+    const parent = item.closest('.modal-content');
     const h1 = parent.querySelector('h1').textContent.toLowerCase();
     item.parentElement.removeChild(item)
 
@@ -329,8 +329,19 @@ function openDayPage(target){
     for(let i = 0; i < tasks.length; i++){
         modalContent.innerHTML += tasks[i].outerHTML
     }
+
+    const modalTasks = modal.querySelectorAll('.task')
+    modalTasks.forEach(task => {
+        task.addEventListener('click', () => {
+            task.classList.toggle('active')
+        })
+    })
 }
 
-function closeModal (){
+function closeModal (modal){
+    const tasks = modal.querySelectorAll('.task.active')
+    tasks.forEach(task => {
+        removeItems(task)
+    })
     modal.classList.remove('active')
 }
